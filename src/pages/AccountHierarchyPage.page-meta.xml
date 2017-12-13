@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>15.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Page that simply displays the Account hierarchy component</description>
+    <label>Account Hierarchy Page</label>
+    <packageVersions>
+        <majorNumber>8</majorNumber>
+        <minorNumber>9</minorNumber>
+        <namespace>APXTConga4</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>10</majorNumber>
+        <minorNumber>0</minorNumber>
+        <namespace>Loop</namespace>
+    </packageVersions>
+    <packageVersions>
+        <majorNumber>4</majorNumber>
+        <minorNumber>65</minorNumber>
+        <namespace>wbsendit</namespace>
+    </packageVersions>
+</ApexPage>

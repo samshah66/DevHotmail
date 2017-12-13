@@ -1,0 +1,15 @@
+<apex:page renderAs="pdf" standardController="Account">
+  <br>
+You are viewing the {!account.name} account. <p/>
+  
+  </br>
+The logged in User : {!$User.Username} has Full Name : {!$User.FirstName & ' ' &  $User.LastName}
+  <br>
+  </br>
+
+The logged in User Manager Name is : {!$User.ManagerId}
+  <br>
+  </br>
+The logged in User Department Name is : {!$User.Department}
+
+</apex:page>

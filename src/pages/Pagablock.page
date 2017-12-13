@@ -1,0 +1,7 @@
+<apex:page standardController="Account">
+
+<apex:pageBlock title="Hello {!$User.FirstName}!">
+Here you are Welcome
+</apex:pageBlock>
+<apex:detail relatedList="false"/>
+</apex:page>

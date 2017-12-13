@@ -1,0 +1,2 @@
+<apex:page sidebar="false" showheader="false"> <apex:flash src="http://www.youtube.com/watch?v=qkQOsDqiSys" height="300%" play="true" width="100%" />
+ </apex:page>

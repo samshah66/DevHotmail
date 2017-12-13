@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity" sidebar="false" showheader="true">
+<apex:form >
+<apex:pageBlock mode="detail">
+<apex:pageBlockSection title="Opportunity Main Section" columns="2">
+<apex:outputField value="{!Opportunity.Name}"/>
+<apex:outputField value="{!Opportunity.CloseDate}"/>
+<apex:outputField value="{!Opportunity.StageName}"/>
+<apex:outputField value="{!Opportunity.Account.Name}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Opportunity Detail Section" columns="2">
+<apex:outputField value="{!Opportunity.TotalOpportunityQuantity}"/>
+<apex:outputField value="{!Opportunity.Description}"/>
+<apex:outputField value="{!Opportunity.Type}"/>
+<apex:outputField value="{!Opportunity.Type}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockButtons >
+<apex:commandButton action="{!save}" value="Save"/>
+</apex:pageBlockButtons>
+
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

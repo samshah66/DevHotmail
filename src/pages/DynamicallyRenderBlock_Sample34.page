@@ -1,0 +1,30 @@
+<apex:page controller="Sample34">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                Object Permissions:
+                <apex:selectRadio value="{!selectedValue}">
+                    <apex:selectOption id="read1" itemLabel="Read" itemValue="f"  />
+                    <apex:selectOption id="write1" itemLabel="Write" itemvalue="cpp" />   
+                    <apex:actionSupport event="onchange" reRender="SampleView" />
+               </apex:selectRadio>
+            </apex:pageBlockSection>
+            
+            <apex:outputPanel id="SampleView">
+                <apex:pageBlockSection rendered="{!IF(selectedValue == 'f', true, false)}">
+                    <apex:pageblockSectionItem >
+                        <apex:outputlabel value="f"/>
+                    </apex:pageblockSectionItem>                           
+                </apex:pageBlockSection>
+                <apex:pageBlockSection rendered="{!IF(selectedValue == 'cpp', true, false)}">
+                    <apex:pageblockSectionItem >
+                        <apex:outputlabel value="cpp"/>    
+                    </apex:pageblockSectionItem>            
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Assign"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

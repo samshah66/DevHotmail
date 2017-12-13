@@ -1,0 +1,18 @@
+<apex:page standardController="Product2" recordSetvar="products">
+<apex:pageBlock title="Viewing Products">
+<apex:form id="theForm">
+<apex:pageBlockSection >
+<apex:pageBlockTable value="{!products}" var="prod" id="prod_table">
+<apex:column value="{!prod.name}"/>
+<apex:column headerValue="Description">
+<apex:inputField value="{!prod.Description}"/>
+</apex:column>
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+<apex:panelGrid columns="2">
+<apex:commandLink action="{!previous}">Previous</apex:commandlink>
+<apex:commandLink action="{!next}">Next</apex:commandlink>
+</apex:panelGrid>
+</apex:form>
+</apex:pageBlock>
+</apex:page>

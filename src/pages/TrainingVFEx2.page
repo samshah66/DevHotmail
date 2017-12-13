@@ -1,0 +1,18 @@
+<apex:page standardController="Account" >
+<br/><br/>
+The field and values of account Record Id "001d000000CsWGt" are as follows
+<br/><br/><br/>
+Account Name : <b> {!account.name} </b>
+<br></br>
+<br></br>
+Account Number : <b> {!account.AccountNumber} </b>
+<br></br>
+Account Owner Id: <b> {!account.Owner} </b>
+<br></br>
+Account Owner Name : <b> {!account.Owner.name} </b>
+<br></br>
+Account Industry : <b> {!account.Industry} </b>
+<br></br>
+Payment Status : <b> {!account.Payment_Status__c} </b>
+
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page standardController="account">
+
+{!$User.FirstName} {!$User.LastName} 
+<br/><br/>
+Current account Name is <b>{!account.Name}</b>
+<br/>
+Current account Description is <b>{!account.Description}</b>
+Current Account contact are <b>{!account.contacts}</b>
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page >
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: RKTraining7
+  <!-- End Default Content REMOVE THIS -->
+ <apex:pageBlock Title="Test">
+  <apex:pageBlockButtons location="top">
+<apex:commandButton value="Save" action="{!Save}"/>
+<apex:commandButton value="Cancel" action="{!Cancel}" immediate="true"/>
+</apex:pageBlockButtons>
+<apex:inputSecret />
+</apex:pageBlock>
+</apex:form>
+</apex:page>

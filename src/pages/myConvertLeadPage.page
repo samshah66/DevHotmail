@@ -1,0 +1,31 @@
+<apex:page standardController="Lead"  showheader="true" extensions="myLeadControllerExtension">
+    <apex:form >
+        <apex:sectionHeader subtitle="{!Lead.Name}" title="Convert Lead"/>
+        <apex:outputText >
+             Leads can be converted to customers, contacts, opportunities, and followup tasks. <br/>
+             You should only convert a lead once you have identified it as qualified.<br/>
+             After this lead has been converted, it can no longer be viewed or edited as a lead, but can be viewed in lead reports.
+        </apex:outputText>   
+    <apex:pageBlock mode="maindetail" >
+       <apex:messages />
+    
+        <apex:pageBlockButtons >   
+           <apex:commandButton action="{!ConvertLead}" value="Convert Lead" />
+           <apex:commandButton action="{!Cancel}" value="Cancel"/>  
+        </apex:pageBlockButtons>  
+         
+        <apex:pageBlockSection Title="Convert Lead" columns="1" collapsible="false"  >
+        </apex:pageBlockSection>   
+        
+        <apex:pageBlockSection columns="1" collapsible="false"> 
+            <apex:InputField label="Record Owner"  value="{!Lead.OwnerId}" />
+            <apex:InputCheckbox label="Send Email to the Owner"  value="{!Lead.Send_Email_to_the_Owner__c}" />
+            <!-- <apex:InputField label="Organisation Name"   value="{!Lead.Company}"/> --->
+           
+            <apex:selectList id="accts" value="{!Lead.Company}" size="1" title="Account" required="true" rendered="true" label="Organisation Name"  >
+                                 <apex:selectOptions value="{!accts}"></apex:selectOptions>
+            </apex:selectList>
+        </apex:pageBlockSection>
+    </apex:PageBlock>
+  </apex:form>
+</apex:page>

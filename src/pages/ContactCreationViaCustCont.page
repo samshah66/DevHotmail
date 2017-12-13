@@ -1,0 +1,12 @@
+<apex:page controller="ContactPageController">
+  
+  <apex:form >
+    <apex:pageMessages id="errors"/>
+    <apex:pageBlock title="Contact" mode="edit">
+        <apex:inputField id="Conatct1" value="{!Cont.LastName}" />
+        <apex:inputField id="Conatct2" value="{!Cont.FirstName}" />
+    <apex:commandButton value="CreateContact" action="SaveData"/>
+    </apex:pageBlock>
+    
+</apex:form>
+</apex:page>

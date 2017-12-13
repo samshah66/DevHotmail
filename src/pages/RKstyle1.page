@@ -1,0 +1,3 @@
+<apex:page > 
+<apex:outputPanel style="border:2px solid green"> My Styled Panel </apex:outputPanel> 
+</apex:page>

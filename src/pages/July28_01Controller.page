@@ -1,0 +1,32 @@
+<apex:page sidebar="false" controller="July28_01Con" >
+    <apex:form >
+        <apex:outputText value="Enter Your First Name : " />
+        <apex:inputText value="{!FirstName}" />
+        <br />
+        <apex:outputText value="Chose your month of birth : " />
+        <apex:selectList size="1" value="{!MonthOfBirth}">
+            <apex:selectOption itemValue="Nothing Selected" itemLabel="Select month"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="January"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="Febrary"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="March"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="April"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="May"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="June"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="July"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="August"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="September"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="October"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="November"></apex:selectOption>
+            <apex:selectOption itemValue="January" itemLabel="December"></apex:selectOption>
+        </apex:selectList>
+ <br />
+        
+        <apex:commandButton value="Click mme"/>
+        <br />
+        <apex:outputText value="Your First Name : " style="color:green; font-size:24px;"/>
+        <apex:outputText value=" {!FirstName}" style="color:red; font-size:24px;"/>
+        <br />
+        <apex:outputText value="Your Month of Birth is  : " style="color:green; font-size:24px;"/>
+        <apex:outputText value=" {!MonthOfBirth}" style="color:red; font-size:24px;"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,44 @@
+<apex:page sidebar="false" controller="sam_custom_controller_con">
+<apex:form >
+<br />
+<apex:outputText value="Enter Your First Name : " />
+<apex:inputText value="{!FstName}"/>
+<br />
+<br />
+<apex:outputText value="Choose the month of Birth Date : "/>
+<apex:selectList size="1" value="{!BirthMonth}">
+
+<apex:selectOption itemValue="Nothing Selected" itemLabel="Nothing Selected"> </apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="January"></apex:selectOption>
+<apex:selectOption itemValue="February" itemLabel="February"></apex:selectOption>
+<apex:selectOption itemValue="March" itemLabel="March"></apex:selectOption>
+<apex:selectOption itemValue="April" itemLabel="April"></apex:selectOption>
+<apex:selectOption itemValue="May" itemLabel="May"></apex:selectOption>
+<apex:selectOption itemValue="June" itemLabel="June"></apex:selectOption>
+<apex:selectOption itemValue="July" itemLabel="July"></apex:selectOption>
+<apex:selectOption itemValue="August" itemLabel="August"></apex:selectOption>
+<apex:selectOption itemValue="September" itemLabel="September"></apex:selectOption>
+<apex:selectOption itemValue="October" itemLabel="October"></apex:selectOption>
+<apex:selectOption itemValue="November" itemLabel="November"></apex:selectOption>
+<apex:selectOption itemValue="December" itemLabel="December"></apex:selectOption>
+</apex:selectList>
+<br />
+<br />
+<hr />
+<br />
+<br />
+<apex:outputText value="Please enter the value in above two field and when button 'Click Me' is clicked the value will be displayed " ></apex:outputText>
+<br />
+<br />
+<apex:commandButton value="Click Me"/>
+<br />
+<br />
+<apex:outputText value="First Name you entered is : " style="color:blue; font-size:24px"/>
+<apex:outputText value="{!FstName}" style="color:Red; font-size:24px"/>
+<br />
+<br />
+
+<apex:outputText value="Birth Month entered is : " style="color:blue; font-size:24px"/>
+<apex:outputText value="{!BirthMonth}" style="color:Red; font-size:24px"/>
+</apex:form>
+</apex:page>

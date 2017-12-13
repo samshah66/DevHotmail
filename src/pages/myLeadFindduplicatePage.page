@@ -1,0 +1,179 @@
+<apex:page standardController="Lead" showheader="true" extensions="myLeadControllerExtension">
+    <apex:form >
+    <!-- below 2 Field made available to Convert Lead Page -->
+       <apex:OutputField value="{!Lead.Send_Email_to_the_Owner__c }" rendered="false" />
+       <apex:OutputField value="{!Lead.OwnerId}" rendered="false" />
+        
+        <apex:sectionHeader subtitle="{!Lead.Name}" title="Lead"/>
+         <apex:pageBlock mode="maindetail" >
+         <apex:messages />
+         <apex:pageBlockButtons >
+         <apex:commandButton action="{!FinddupContacts}" value="Search"/>
+         <apex:commandButton action="{!ConvertLead}" value="Convert Lead"/>
+         <apex:commandButton action="{!Cancel}" value="Cancel"/>
+         </apex:pageBlockButtons>
+              <apex:pageBlockSection columns="1" collapsible="false">
+                   <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name"></apex:outputLabel>
+                    <apex:outputPanel >
+                    <apex:inputCheckbox id="firstName">
+                    <apex:actionSupport event="onclick" action="{!FinddupContacts}"/>
+                    </apex:inputCheckbox>
+                    <apex:inputField value="{!Lead.FirstName}" required="false"/>
+                    </apex:outputPanel>
+               </apex:pageBlockSectionItem> 
+               
+               <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Last Name"></apex:outputLabel>
+                    <apex:outputPanel >
+                    <apex:inputCheckbox />
+                    <apex:OutputField value="{!Lead.LastName}"/>
+                    </apex:outputPanel>
+               </apex:pageBlockSectionItem> 
+               
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Company"></apex:outputLabel>
+                    <apex:outputPanel >
+                    <apex:inputCheckbox />
+                    <apex:inputField value="{!Lead.Company}" required="false" rendered="true"/>
+                    </apex:outputPanel>
+               </apex:pageBlockSectionItem> 
+               
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Email"></apex:outputLabel>
+                    <apex:outputPanel >
+                    <apex:inputCheckbox />
+                    <apex:inputField value="{!Lead.Email}" required="false" rendered="true"/>
+                    </apex:outputPanel>
+               </apex:pageBlockSectionItem> 
+               
+               <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Email Domain"></apex:outputLabel>
+                   <apex:outputPanel >
+                   <apex:inputCheckbox />
+                   <apex:OutputField value="{!Lead.Email_Domain__c}" />
+                   </apex:outputPanel>
+               
+               </apex:pageBlockSectionItem>  
+                   <apex:pageBlockSectionItem >
+                   <apex:outputLabel value="Phone"></apex:outputLabel>
+                   <apex:outputPanel >
+                   <apex:inputCheckbox />
+                   <apex:OutputField value="{!Lead.Phone}" />
+                   </apex:outputPanel>
+               </apex:pageBlockSectionItem> 
+        
+              </apex:pageBlockSection>
+         </apex:pageBlock>
+   </apex:form>       
+         
+ <apex:pageBlock title="Matching Contacts" >
+      <apex:pageBlockTable value="{!matchContacts}" var="contact">
+      
+     <apex:column headervalue="Action" width="5%">
+       <apex:outputLink title="" value="/{!contact.id}/e?retURL=/apex/{!$CurrentPage.Name}"  style="color:blue" >Edit</apex:outputLink>
+     </apex:column>
+
+     <apex:column headervalue="Name" width="25%">
+       <apex:outputLink value="/{!contact.id}">
+       <apex:outputField value="{!contact.Name}"/>
+       </apex:outputLink>
+     </apex:column>   
+         
+     <apex:column headervalue="First Name" width="10%">
+       <apex:outputLink value="/{!contact.id}">
+       <apex:outputField value="{!contact.firstname}"/>
+       </apex:outputLink>
+     </apex:column>   
+     
+     <apex:column headervalue="Account Name" width="10%">
+       <apex:outputLink value="/{!contact.accountid}">
+       <apex:outputField value="{!contact.account.name}"/>
+       </apex:outputLink>
+     </apex:column>   
+    
+     <apex:column headervalue="Account Site" width="10%">
+       <apex:outputField value="{!contact.account.site}"/>
+     </apex:column>   
+     
+     <apex:column headervalue="Phone" width="10%">
+       <apex:outputField value="{!contact.Phone}"/>
+     </apex:column>   
+     
+     <apex:column headervalue="Email" width="10%">
+       <apex:outputField value="{!contact.email}"/>
+     </apex:column>    
+         
+     
+     <apex:column headervalue="Department" width="10%">
+       <apex:outputField value="{!contact.Department}"/>
+     </apex:column>    
+         
+     <apex:column headervalue="Contact Owner Alias" width="10%">
+       <apex:outputLink value="/{!contact.ownerid}">
+       <apex:outputField value="{!contact.Owner.Name}"/>
+       </apex:outputLink>
+     </apex:column>     
+  
+  </apex:pageBlockTable>
+      
+     
+      
+   </apex:pageBlock>
+
+
+<apex:pageBlock title="Matching Organisations" >
+   <apex:pageBlockTable value="{!matchAccounts}" var="accounts">
+      <apex:column headervalue="Action">
+          <apex:outputLink title="" value="/{!accounts.id}/e?retURL=/apex/{!$CurrentPage.Name}"  style="color:blue" >Edit</apex:outputLink>
+      </apex:column>
+      
+      <apex:column headervalue="Organisation Name">
+         <apex:outputLink value="/{!accounts.id}">
+         <apex:outputField value="{!accounts.Name}"/>
+         </apex:outputLink>
+      </apex:column>   
+        
+      <apex:column headervalue="Trading as Name">
+         <apex:outputField value="{!accounts.Name}"/>
+      </apex:column>   
+      
+      <apex:column headervalue="Organisation Record Type">
+         <apex:outputField value="{!accounts.Name}"/>
+      </apex:column>   
+      
+      <apex:column headervalue="Mailing Country">
+         <apex:outputField value="{!accounts.BillingCountry}"/>
+      </apex:column> 
+      
+      <apex:column headervalue="Mailing City">
+         <apex:outputField value="{!accounts.BillingCity}"/>
+      </apex:column>    
+      
+            
+      <apex:column headervalue="Mailing Zip/Postal Code">
+         <apex:outputField value="{!accounts.BillingPostalCode}"/>
+      </apex:column>    
+      
+      <apex:column headervalue="UK Region - Org">
+         <apex:outputField value="{!accounts.UK_Region_Org__c}"/>
+      </apex:column>    
+      
+      <apex:column headervalue="Organisation Owner Alias">
+         <apex:outputField value="{!accounts.owner.name}"/>
+      </apex:column>    
+      
+      <apex:column headervalue="BAG ID">
+         <apex:outputField value="{!accounts.Bag_Id__c}"/>
+      </apex:column>    
+      
+      <apex:column headervalue="TPA ID">
+         <apex:outputField value="{!accounts.TPA_ID__c}"/>
+      </apex:column>    
+      
+      
+     
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+   
+</apex:page>

@@ -1,0 +1,111 @@
+<apex:page standardController="Lead" sidebar="false" showheader="true" extensions="myLeadControllerExtension">
+
+<style type="text/css">
+        .myClass { width: 200px; }
+ </style>
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<!--<apex:commandButton action="{!save}" value="Save"/>-->
+</apex:pageBlockButtons>
+<apex:PageBlockSection title="Lead" columns="1" collapsible="false">
+
+<table width="100%">  
+<tr>
+<apex:outputPanel >
+     <table width="100%">  
+  <tr>   
+     <td width="50%">
+        <apex:outputText > Name  </apex:outputText>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:inputCheckbox />&nbsp;&nbsp;&nbsp;
+        <apex:inputField styleClass="myClass" id="firstName" value="{!Lead.FirstName}" />
+     </td>
+</tr>
+<tr>   
+     <td width="50%">
+        <apex:outputText > Last Name </apex:outputText>
+        <apex:inputCheckbox />&nbsp;&nbsp;&nbsp;
+        <apex:inputText styleClass="myClass" id="lastName" value="{!Lead.LastName}"  />
+     </td>
+</tr>
+<tr>  
+     <td width="50%">
+        <apex:outputText value="Company"  escape="false" />&nbsp;&nbsp;
+        <apex:inputCheckbox />&nbsp;&nbsp;&nbsp;
+        <apex:inputtext styleClass="myClass" id="Company" value="{!Lead.Company}" />
+     </td>
+</tr>
+
+<tr>   
+     <td width="50%">
+        <apex:outputText value="Email"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:inputCheckbox />&nbsp;&nbsp;&nbsp;
+        <apex:inputField styleClass="myClass" id="Email" value="{!Lead.Email}" />
+     </td>
+</tr>
+
+<tr>   
+     <td width="50%">
+        <apex:outputText value="Phone"  />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <apex:inputCheckbox />&nbsp;&nbsp;&nbsp;
+        <apex:inputField styleClass="myClass" id="Phone" value="{!Lead.Phone}" />
+     </td>
+</tr>
+
+</table>
+ </apex:outputPanel>
+ </tr>
+ </table >  
+
+</apex:pageBlockSection>
+ <apex:commandButton action="{!FinddupContacts}" value="Search"/>
+ <apex:commandButton action="{!ConvertLead}" value="Convert Lead"/>
+ <apex:commandButton action="{!Cancel}" value="Cancel"/>
+
+</apex:pageBlock>
+
+
+   <apex:pageBlock title="Matching Contacts" >
+      <apex:pageBlockTable value="{!matchContacts}" var="contact">
+      
+     <apex:column headervalue="Action">
+       <apex:outputLink title="" value="/{!contact.id}/e?retURL=/apex/{!$CurrentPage.Name}"  style="color:blue" >Edit</apex:outputLink>
+     </apex:column>
+
+     <apex:column headervalue="Name">
+       <apex:outputLink value="/{!contact.id}">
+       <apex:outputField value="{!contact.Name}"/>
+       </apex:outputLink>
+     </apex:column>   
+         
+         
+         <apex:column value="{!contact.lastname}"/>
+         <apex:column value="{!contact.firstname}"/>
+         <apex:column value="{!contact.email}"/>
+      </apex:pageBlockTable>
+      
+     
+      
+   </apex:pageBlock>
+
+
+<apex:pageBlock title="Matching Organisations" >
+      <apex:pageBlockTable value="{!matchAccounts}" var="accounts">
+      <apex:column headervalue="Action">
+       <apex:outputLink title="" value="/{!accounts.id}/e?retURL=/apex/{!$CurrentPage.Name}"  style="color:blue" >Edit</apex:outputLink>
+       </apex:column>
+         <apex:column headervalue="Name">
+         <apex:outputLink value="/{!accounts.id}">
+         <apex:outputField value="{!accounts.Name}"/>
+         </apex:outputLink>
+      </apex:column>   
+        
+         <apex:column value="{!accounts.BillingStreet}"/>
+         <apex:column value="{!accounts.BillingCity}"/>
+         <apex:column value="{!accounts.BillingCountry}"/>
+         <apex:column value="{!accounts.AccountSource}"/>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+
+</apex:form>
+</apex:page>

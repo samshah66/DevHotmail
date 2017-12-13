@@ -1,0 +1,98 @@
+<apex:page standardController="Opportunity" sidebar="false" showheader="true">
+
+
+<br />
+<br />
+<apex:outputText value="Opportunity Main Section" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+
+<table width="100%">
+
+<tr>
+    <td width="10%">
+        <apex:outputText value="Opportunity Name: " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Name}"/>
+    </td>
+    
+    <td width="10%">
+        <apex:outputText value="Closed Date : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>        
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.CloseDate}"/>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td width="10%">
+        <apex:outputText value="Opp Stage : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.StageName}"/>
+    </td>    
+    
+    <td width="10%">
+        <apex:outputText value="Account Name : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Account.Name}"/>
+    </td>
+</tr>
+</table>
+
+<br />
+<br />
+<apex:outputText value="Opportunity Detail Section" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+<table width="100%">
+
+<tr>
+    <td width="10%">
+        <apex:outputText value="Expected Revenue : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.ExpectedRevenue}"/>
+    </td>
+    
+    <td width="10%">
+        <apex:outputText value="Total Opp Quantity : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>        
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.TotalOpportunityQuantity}"/>
+    </td>
+</tr>
+
+<tr>
+
+    <td width="10%">
+        <apex:outputText value="Description : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Description}"/> 
+    </td>    
+    
+    <td width="10%">
+        <apex:outputText value="Opportunity Type : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Type}"/>
+    </td>
+</tr>
+</table>
+
+</apex:page>

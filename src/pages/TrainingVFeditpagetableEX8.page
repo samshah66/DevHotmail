@@ -1,0 +1,114 @@
+<apex:page standardController="Opportunity" sidebar="false" showheader="true" showChat="true">
+<Chatter:followers entityid="006d0000006Bc2E" />
+<apex:form >
+<apex:pageBlock mode="edit">
+<apex:pageBlockButtons >
+<apex:commandButton action="{!save}" value="Save"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection title="Opportunity Main Section" columns="2">
+
+<br />
+<br />
+<apex:outputText value="Opportunity Main Section" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+
+<table width="100%">
+
+<tr>
+<th/><th/>
+
+    <!--<td width="10%">
+        <apex:outputText value="Opportunity Name: " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> -->
+
+    <td width="100%">
+        <apex:InputField value="{!Opportunity.Name}"/>
+    </td>
+    
+    <td width="100%">
+        <apex:InputField value="{!Opportunity.CloseDate}"/>
+    </td>
+   <!-- <td width="10%">
+        <apex:OutText value="Closed Date : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>    -->    
+
+    
+</tr>
+
+
+<tr>
+
+    <td width="10%">
+        <apex:outputText value="Opp Stage : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.StageName}"/>
+    </td>    
+    
+    <td width="10%">
+        <apex:outputText value="Account Name : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Account.Name}"/>
+    </td>
+</tr>
+</table>
+</apex:pageBlockSection>
+<apex:pageBlockSection title="Opportunity Detail Section" columns="2">
+<br />
+<br />
+<apex:outputText value="Opportunity Detail Section" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+<table width="100%">
+
+<tr>
+    <td width="10%">
+        <apex:outputText value="Expected Revenue : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.ExpectedRevenue}"/>
+    </td>
+    
+    <td width="10%">
+        <apex:outputText value="Total Opp Quantity : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>        
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.TotalOpportunityQuantity}"/>
+    </td>
+</tr>
+
+<tr>
+
+    <td width="10%">
+        <apex:outputText value="Description : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Description}"/> 
+    </td>    
+    
+    <td width="10%">
+        <apex:outputText value="Opportunity Type : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Opportunity.Type}"/>
+    </td>
+</tr>
+</table>
+
+</apex:pageBlockSection>
+
+
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

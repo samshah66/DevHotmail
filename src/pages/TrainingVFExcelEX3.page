@@ -1,0 +1,22 @@
+<apex:page standardController="account" contentType="application/vnd.ms-excel#contacts.xls">
+    
+<apex:image id="theImage" value="{!$Resource.Style1}" width="50" height="50" style="margin-right:10px"/>
+<!-- Begin Default Content REMOVE THIS -->
+  <h1>Export Account Details to Excel sheet</h1>
+  
+The field and values of account Record Id "001d000000CsWGt" are as follows
+
+<br/><br/><br/>
+Account Name : <b> {!account.name} </b>
+<br></br>
+<br></br>
+Account Number : <b> {!account.AccountNumber} </b>
+<br></br>
+Account Owner Id: <b> {!account.Owner} </b>
+<br></br>
+Account Owner Name : <b> {!account.Owner.name} </b>
+<br></br>
+Account Industry : <b> {!account.Industry} </b>
+<br></br>
+Payment Status : <b> {!account.Payment_Status__c} </b>
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page controller="TestExchangeController">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <apex:form >
+    <div class="form-group"> 
+        <div>Are you an existing customer?</div>
+        <fieldset>
+            <apex:selectradio id="radios" value="{!radioValue}" >
+                <apex:selectoption itemvalue="true" itemlabel="Yes" />
+                <apex:selectoption itemvalue="false" itemlabel="No" />
+            </apex:selectradio>
+        </fieldset>
+        <div class="form-group" id="seekBorrow" style="display: none;"> 
+            <div>Is the amount you are seeking to borrow, plus any? </div>
+            <fieldset>
+                <apex:selectradio >
+                <apex:selectoption itemvalue="true" itemlabel="Yes" />
+                    <apex:selectoption itemvalue="false" itemlabel="No" />
+                </apex:selectradio>
+            </fieldset>
+        </div> 
+    </div>
+    </apex:form>
+    <script>
+        $("input:radio[name$=radios]").change(function () {
+        var radio_value= $(this).val();
+        if(radio_value =='true'){
+            $('#seekBorrow').show();
+        } else {
+            $("#seekBorrow").hide();
+        }
+    });
+    </script>
+</apex:page>

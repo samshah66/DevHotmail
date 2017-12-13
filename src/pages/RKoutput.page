@@ -1,0 +1,22 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock title="New Account Page" mode="edit">
+            
+            <apex:pageBlockSection title="My Account Page information" columns="3">
+                <apex:OutputField value="{!account.name}"/>
+                <apex:OutputField value="{!account.site}"/>
+                <apex:OutputField value="{!account.type}"/>
+                <apex:OutputField value="{!account.Phone}"/>
+                <apex:OutputField value="{!account.accountNumber}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Other details" columns="3">
+                <apex:OutputField value="{!account.Website}"/>
+                <apex:OutputField value="{!account.rating}"/>
+                <apex:OutputField value="{!account.Fax}"/>
+                <apex:outputText ><b>Note:-</b> Please close this before year end.</apex:outputText>
+                <br/>
+                <apex:image value="/resource/1377103821000/Style1" width="220" height="200" dir="LTR"/>
+               </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

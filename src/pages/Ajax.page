@@ -1,0 +1,25 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock id="in" title="Create New Account Mr. {!$User.LastName} ">
+            <apex:pageMessages />
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!quickSave}" rerender="in,out"/>     
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.industry}"/>
+                <apex:inputField value="{!account.Type}"/>
+                <apex:inputField value="{!account.Phone}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageBlock id="out" title="Read View">               
+        <apex:actionStatus startText="Wait it's updating" id="status"/>
+        <apex:pageBlockSection >
+            <apex:outputField value="{!account.name}"/>
+            <apex:outputField value="{!account.industry}"/>
+            <apex:OutputField value="{!account.Type}"/>
+            <apex:OutputField value="{!account.Phone}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

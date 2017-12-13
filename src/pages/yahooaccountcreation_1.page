@@ -1,0 +1,166 @@
+<apex:page sidebar="false" showHeader="false">
+<apex:form >
+<apex:image style="widh:100px; height:100px;" url="data:image/jpeg;base64,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"/>
+<br />
+<br />
+<apex:outputText value="Some basics to get you started" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+<table width="100%">
+    <tr>
+        <td width="35%">
+            <apex:outputText value="My Name is" style="font-size:18px; color:Grey;"></apex:outputText>
+        </td>
+        <td width="30%">
+            <apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+        </td>
+        <td width="35%">
+            <apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >        
+            </td>
+        
+
+    </tr>   <!-- ended first row here --->
+    <tr>   <!-- second row starts here --->
+        <td>
+        <apex:outputText value="Pick a Yahoo! ID" style="font-size:18px; color:Grey;"></apex:outputText>
+        </td>
+        <td>
+        <apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+        <apex:outputText value=" @ " style="font-size:18px; color:Grey;"></apex:outputText>
+        </td>
+        <td>
+        
+         
+        <apex:selectList size="1" style="font-size:18px; color:Grey;width:200px; height:50px;border-style:solidshaded;border-width:2px">
+       
+        <apex:selectOption itemValue="Yahoo.co.uk" itemLabel="Yahoo.co.uk"></apex:selectOption>
+        <apex:selectOption itemValue="Yahoo.com" itemLabel="Yahoo.com"></apex:selectOption>
+        </apex:selectList>
+        </td>
+    </tr>  <!-- closing of 2nd row here --->
+   </table>  <!-- closing of the table.  --->
+
+<br />
+<br />
+<apex:outputText value="Pick a Password" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:inputSecret style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+<br />
+<br />
+<apex:outputText value="Retype Password" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:inputSecret style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+
+<br />
+<br />
+<apex:outputText value="A little personal info" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:outputText value="   so we can serve you better" style="font-size:18px; color:Grey;"></apex:outputText>
+
+<hr />
+<apex:outputText value="I was born on" style="font-size:18px; color:Grey;"/>
+<apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/>  
+<apex:selectList size="1" style="font-size:18px; color:Grey;width:200px; height:50px;border-style:solidshaded;border-width:2px">
+<apex:selectOption itemValue="Select month" itemLabel="Select month"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="January"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="Febrary"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="March"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="April"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="May"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="June"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="July"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="August"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="September"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="October"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="November"></apex:selectOption>
+<apex:selectOption itemValue="January" itemLabel="December"></apex:selectOption>
+</apex:selectList>
+<apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+
+<br />
+<br />
+<apex:outputText value="My Gender" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:selectList size="1" style="font-size:18px; color:Grey;width:200px; height:50px;border-style:solidshaded;border-width:2px">
+<apex:selectOption itemValue="Select One" itemLabel="Select One"></apex:selectOption>
+<apex:selectOption itemValue="Male" itemLabel="Male"></apex:selectOption>
+<apex:selectOption itemValue="Female" itemLabel="Female"></apex:selectOption>
+</apex:selectList>
+<br />
+<br />
+<apex:outputText value="Country" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:selectList size="1" style="font-size:18px; color:Grey;width:200px; height:50px;border-style:solidshaded;border-width:2px">
+<apex:selectOption itemValue="Select One" itemLabel="Select One"></apex:selectOption>
+<apex:selectOption itemValue="UK" itemLabel="UK"></apex:selectOption>
+<apex:selectOption itemValue="India" itemLabel="India"></apex:selectOption>
+</apex:selectList>
+<br />
+<br />
+<apex:outputText value="Post Code" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >
+<br />
+<br />
+<hr />
+<br />
+<br />
+<apex:outputText value="If you can't sign in, we can help you using these options" style="font-size:18px; color:Grey;"></apex:outputText>
+<br />
+<br />
+<apex:outputText value="Mobile Number" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:selectList size="1" style="font-size:18px; color:Grey;width:200px; height:50px;border-style:solidshaded;border-width:2px">
+    <apex:selectOption itemValue="UK(+44)" itemLabel="UK(+44)"></apex:selectOption>
+    <apex:selectOption itemValue="India(+91)" itemLabel="India(+91)"></apex:selectOption>
+    <apex:selectOption itemValue="USA(+11)" itemLabel="USA(+11)"></apex:selectOption>
+</apex:selectList>
+<apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ >  
+<br />
+<br />
+<apex:outputText value="Alternate Email" style="font-size:18px; color:Grey;"></apex:outputText>
+<apex:inputText style="width:200px; height:50px;border-style:solidshaded;border-width:2px;"/ > 
+<br />
+<br />
+
+<br />
+<br />
+<apex:selectCheckboxes >
+    <apex:selectOption itemValue="I agree to the Yahoo! Terms of Service,  Yahoo! Privacy Policy  including Cookie Use and Communications Terms." itemLabel="I agree to the Yahoo! Terms of Service,  Yahoo! Privacy Policy  including Cookie Use and Communications Terms." />
+</apex:selectCheckboxes>
+
+<br />
+<br />
+<!---  demo CHECKBOXES AND RADIO BUTTONS  --->
+<apex:outputText value="select your favourite months : "></apex:outputText>
+<apex:selectCheckboxes layout="pageDirection" >
+    <apex:selectOption itemValue="January" itemLabel="January" ></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="Febrary"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="March"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="April"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="May"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="June"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="July"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="August"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="September"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="October"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="November"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="December"></apex:selectOption>
+</apex:selectCheckboxes>
+
+<apex:outputText value="select your month of birth : "></apex:outputText>
+<apex:selectRadio layout="pageDirection" >
+    <apex:selectOption itemValue="January" itemLabel="January" ></apex:selectOption>
+    <apex:selectOption itemValue="Febrary" itemLabel="Febrary"></apex:selectOption>
+    <apex:selectOption itemValue="March" itemLabel="March"></apex:selectOption>
+    <apex:selectOption itemValue="April" itemLabel="April"></apex:selectOption>
+    <apex:selectOption itemValue="January" itemLabel="May"></apex:selectOption>
+    <apex:selectOption itemValue="May" itemLabel="June"></apex:selectOption>
+    <apex:selectOption itemValue="July" itemLabel="July"></apex:selectOption>
+    <apex:selectOption itemValue="August" itemLabel="August"></apex:selectOption>
+    <apex:selectOption itemValue="September" itemLabel="September"></apex:selectOption>
+    <apex:selectOption itemValue="October" itemLabel="October"></apex:selectOption>
+    <apex:selectOption itemValue="November" itemLabel="November"></apex:selectOption>
+    <apex:selectOption itemValue="December" itemLabel="December"></apex:selectOption>
+</apex:selectRadio> 
+
+<br />
+<apex:commandButton value="Create My Account"   styleClass="buttonStyle"   style="font-family:Blackadder ITC; Background:Yellow; height:100px; width:230px; font-size:24px; color:green; font-weight:bold" />
+</apex:form>
+
+</apex:page>

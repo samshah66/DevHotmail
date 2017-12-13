@@ -1,0 +1,98 @@
+<apex:page standardController="Lead" sidebar="false" showheader="true" extensions="myLeadControllerExtension">
+<apex:form >
+
+<br />
+<br />
+<apex:outputText value="Lead Main Section" style="font-size:24px" ></apex:outputText>
+<br />
+<hr />
+<br />
+
+
+<table width="100%">
+
+<tr>
+    <td width="10%">
+        <apex:outputText value="Lead Name: " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>
+
+    <td width="40%">
+        <apex:outputField value="{!Lead.Name}"/>
+    </td>
+ 
+</tr>
+
+
+
+<tr>   
+    <td width="10%">
+        <apex:outputText value="Lead Last Name: " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td>        
+
+    <td width="40%">
+        <apex:outputField value="{!Lead.lastName}"/>
+    </td>
+</tr>
+
+
+<tr>
+
+    <td width="10%">
+        <apex:outputText value="Lead Company : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+
+    <td width="40%">
+        <apex:outputField value="{!Lead.Company}"/>
+    </td>    
+</tr>
+
+<tr>   
+    <td width="10%">
+        <apex:outputText value="Lead Email : " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Lead.Email}"/>
+    </td>
+</tr>
+
+<tr>   
+    <td width="10%">
+        <apex:outputText value="Lead Phone: " style="font-size:12px; color:Blue;"></apex:outputText>
+    </td> 
+    <td width="40%">
+        <apex:outputField value="{!Lead.Phone}"/>
+    </td>
+</tr>
+</table>
+
+ <apex:commandButton action="{!FinddupContacts}" value="Find duplicates"/>
+ 
+  <apex:commandButton action="{!ConvertLead}" value="Convert Lead"/>
+
+   <apex:pageBlock title="Matching Contacts" >
+      <apex:pageBlockTable value="{!matchContacts}" var="contact">
+         <apex:column value="{!contact.Name}"/>
+         <apex:column value="{!contact.lastname}"/>
+         <apex:column value="{!contact.firstname}"/>
+         <apex:column value="{!contact.email}"/>
+      </apex:pageBlockTable>
+      
+     
+      
+   </apex:pageBlock>
+
+
+<apex:pageBlock title="Matching Organisations" >
+      <apex:pageBlockTable value="{!matchAccounts}" var="accounts">
+         <apex:column value="{!accounts.Name}"/>
+         <apex:column value="{!accounts.BillingStreet}"/>
+         <apex:column value="{!accounts.BillingCity}"/>
+         <apex:column value="{!accounts.BillingCountry}"/>
+         <apex:column value="{!accounts.AccountSource}"/>
+      </apex:pageBlockTable>
+   </apex:pageBlock>
+
+
+
+</apex:form>
+</apex:page>
